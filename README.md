@@ -1,5 +1,5 @@
 # Monitoring of a Dynamic System Based on Autoencoders
----
+
 This repository contains code to reproduce experimental resutls of our submission to IJCAI 2019.
 
 # Considered application
@@ -18,7 +18,7 @@ A complete interactive `dash`-based application to visualize the dataset can be 
 # Requirements
 * `numpy`
 * `pyTorch`
-* `scikit-multiflow` (patched version available [here](https://github.com/HamidiMassinissa/scikit-multiflow)
+* `scikit-multiflow` (patched version available [here](https://github.com/HamidiMassinissa/scikit-multiflow))
 * `scikit-optimize`
 * `fanova` to install, please follow the steps [here](https://automl.github.io/fanova/install.html)
 
