@@ -1,0 +1,9 @@
+# TEST CONFIGURATION BEGIN
+# Dataset Stream:  -  n_targets: 1
+# Prequential Evaluator: n_wait: 50 - max_samples: 100000 - max_time: inf - output_file: prequential.npy - batch_size: 1 - pretrain_size: 200 - task_type: regression - show_plot: True - metrics: ['true_vs_predicted', 'mean_square_error', 'mean_absolute_error']
+# TEST CONFIGURATION END
+id,true_value,predicted_value_[M0],mean_mse_[M0],current_mse_[M0],mean_mae_[M0],current_mae_[M0]
+200,8764.000000,685.675476,65259327.113861,65259327.113861,8078.324524,8078.324524
+201,8764.000000,698.677307,65154378.627001,65154378.627001,8071.823608,8071.823608
+202,8768.000000,703.903564,65112802.858601,65112802.858601,8069.247884,8069.247884
+203,8770.000000,671.719177,65230140.214996,65230140.214996,8076.506119,8076.506119
