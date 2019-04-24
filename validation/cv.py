@@ -3,8 +3,8 @@ import torch.utils.data  # In particular, DataLoader yields batches
 from sklearn.model_selection import KFold
 
 from models.train import train, reset_weights
-from models.utils import save_txt
 from models.zipdataset import ZipDataset
+from validation.utils import save_txt
 
 
 def cv(model,
