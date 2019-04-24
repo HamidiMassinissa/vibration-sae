@@ -16,6 +16,7 @@ if __name__ == '__main__':
     config.new_experiment()
 
     X = Dataset()[config.CHANNEL]  # already segmented and overlapped!
+    # hp = Hyperparameters()
 
     tscv = TimeSeriesSplit(n_splits=5)
     for train_index, test_index in tscv.split(X):
@@ -24,6 +25,7 @@ if __name__ == '__main__':
 
         ae = Model(
             AE(
+                # architecture hyperparameters
                 n_input=1,
                 n_hidden=config.n_hidden,
                 n_output=1,

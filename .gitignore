@@ -132,4 +132,4 @@ log/
 
 *.mmap
 
-experiments/
+_experiments/

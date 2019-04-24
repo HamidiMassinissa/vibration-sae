@@ -47,3 +47,10 @@ def print_tensor_stats(tensor, name):
               np.min(tensor.detach().numpy()),
               np.mean(tensor.detach().numpy()),
               np.var(tensor.detach().numpy())))
+
+
+def plot_loss(loss, title=None):
+    print('[plot_loss]\ntitle={}\nlosses.shape={}'.format(title, loss.shape))
+    fig = plt.figure(figsize=(20, 5))
+    plt.plot(np.concatenate(loss))
+    save_figure(fig, title)

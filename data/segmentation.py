@@ -186,13 +186,3 @@ class Segmentation(object):
             sys.exit(1)
 
         return (lds, modalities_assoc)
-
-
-if __name__ == '__main__':
-    # Build data reader and get training data
-    dr = DataReader()
-    X = dr.data
-    p = Segmentation(X)
-
-    X = p.X
-    modalities_assoc = p.modalities_assoc

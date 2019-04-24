@@ -2,7 +2,7 @@ from skopt.space import Real, Integer
 
 space = [
     Integer(low=64, high=384, name='n_hidden'),
-    Real(low=1e-1, high=5e-1, prior='log-uniform', name='temperature'),
+    Real(low=0.2, high=0.5, prior='log-uniform', name='temperature'),
     Real(low=1e-5, high=1e-1, prior='log-uniform', name='weight decay'),
     Real(low=1e-5, high=1e-1, prior='log-uniform', name='learning rate'),
     Real(low=0.05, high=0.1, prior='log-uniform', name='Sparsity parameter'),
@@ -16,7 +16,7 @@ space = [
 ]
 
 
-def __str__(list):
+def string_of_hyperparameters(list):
     return ', '.join(
         str(l) for l in list
     )

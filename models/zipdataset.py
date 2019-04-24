@@ -10,6 +10,9 @@ class ZipDataset(torch.utils.data.Dataset):
         return min(len(dataset) for dataset in self.datasets)
 
     def __getitem__(self, i):
+        # import pdb
+        # pdb.set_trace()
+
         # return tuple(dataset[i] for dataset in self.datasets)
         return tuple(torch.from_numpy(dataset[i]).float()
                      for dataset in self.datasets)

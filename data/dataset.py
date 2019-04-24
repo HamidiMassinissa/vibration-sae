@@ -37,8 +37,6 @@ class Dataset():
                     [idz] = self.modalities_assoc[channel]
                     idz_s.append(idz)
                 item = self.X[idx, :, idz_s]
-                print('[Dataset.__getitem__] item.shape = {}'
-                      .format(item.shape))
                 # assert item.shape == (self.frame_size,) or item.shape == (len(self), self.frame_size, len(channels))
             else:
                 # dataset[idx, idy, channel]
@@ -52,6 +50,9 @@ class Dataset():
             else:
                 item = self.X[pos]
                 # assert item.shape == (self.frame_size, self.num_channels)  # (60, 12)
+
+        print('[Dataset.__getitem__] item.shape = {}'
+              .format(item.shape))
 
         # return torch.from_numpy(item).float()
         return item

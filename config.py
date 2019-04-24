@@ -26,12 +26,12 @@ class Configuration:
     N_JOBS_bayes = 1
 
     FINGERPRINT_SIZE = 12
-    CHANNEL = ''
+    CHANNEL = 'acc2__'
     TIMESTAMP_CHANNEL = 'time__'
     DEBUG_CHANNEL = 'acc2__'
     DEBUG = True
     LOG_INTERVAL = 10
-    MAX_TRAINING_EPOCHS = 5
+    MAX_TRAINING_EPOCHS = 2
     CUDA = False
     CV_N_SPLITS = 10
 
@@ -44,7 +44,8 @@ class Configuration:
     overlap = 0.9
     batch_size = 10
     learning_rate = 1e-2
-    decay = 1
+    temperature = 0.5
+    weight_decay = 1
     n_layers = 1
     n_hidden = 20
     encoder_num_hidden_units_1 = 100
@@ -57,6 +58,8 @@ class Configuration:
     independent_batches = True
     allow_hidden_to_flow = False
     max_norm = 0.25
+    sparsity = 0.05
+    sparsity_penalty = 0.5
 
     @classmethod
     def parse_commandline(self, is_testing=False):
@@ -66,6 +69,11 @@ class Configuration:
         """
         parser = ArgumentParser(description='')
         parser.add_argument(  # absolute path of the current directory
+            '--run',
+            metavar='run',
+            required=True
+        )
+        parser.add_argument(  # absolute path of the current directory
             '--prefix',
             metavar='prefix',
             required=False
@@ -73,17 +81,20 @@ class Configuration:
         parser.add_argument(
             '--revision',
             metavar='revision',
-            required=True
+            default='0',
+            required=False
         )
         parser.add_argument(
             '--minor-revision',
             metavar='minor_revision',
+            default='0',
             required=False
         )
         parser.add_argument(
             '--channel',
             metavar='channel',
-            required=True
+            default='acc2__',
+            required=False
         )
         parser.add_argument(
             '--independent-batches',
@@ -96,6 +107,7 @@ class Configuration:
             required=False
         )
         args = parser.parse_args()
+        self.RUN = args.run
         self.PREFIX = args.prefix
         self.REVISION = args.revision
         self.MINOR_REVISION = args.minor_revision
