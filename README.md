@@ -32,20 +32,20 @@ If you are using `pip` package manager, you can simply install all requirements 
 
 ## Autoencoder
 
-    python3 vibration --autoencoder
+    python3 vibration.py --run autoencoder
     
 additionnally, you can check model's performances via cross-validation as well as walk-forward schemes with the following commands:
 
-    python3 vibration --crossval
-    python3 vibration --walkforward
+    python3 vibration.py --run crossval
+    python3 vibration.py --run walkforward
 
 ## Continuous monitoring
 
-    python3 vibration --monitoring
+    python3 vibration.py --run monitoring
 
 ## Bayesian optimization
 
-    python3 vibration --bayesopt
+    python3 vibration.py --run bayesopt
 
 ## functional analysis of variance
 A complete analysis can be found inside `notebooks` folder.
