@@ -22,19 +22,30 @@ A complete interactive `dash`-based application to visualize the dataset can be 
 * `scikit-optimize`
 * `fanova` to install, please follow the steps [here](https://automl.github.io/fanova/install.html)
 
-If you are using `pip` package manager, you can simply install all requirements via the following command:
+If you are using `pip` package manager, you can simply install all requirements via the following command(s):
 
     python -m virtualenv .env -p python3 [optional]
     source .env/bin/activate [optional]
     pip3 install -r requirements.txt
 
 # How to run
-Take a look inside the corresponding folder of each section. Further instructions are provided there.
 
 ## Autoencoder
 
+    python3 vibration --autoencoder
+    
+additionnally, you can check model's performances via cross-validation as well as walk-forward schemes with the following commands:
+
+    python3 vibration --crossval
+    python3 vibration --walkforward
+
 ## Continuous monitoring
+
+    python3 vibration --monitoring
 
 ## Bayesian optimization
 
+    python3 vibration --bayesopt
+
 ## functional analysis of variance
+A complete analysis can be found inside `notebooks` folder.
