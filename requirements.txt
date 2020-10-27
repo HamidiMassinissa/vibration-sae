@@ -10,7 +10,7 @@ chardet==3.0.4
 checkbox-support==0.22
 chrome-gnome-shell==0.0.0
 command-not-found==0.3
-cryptography==2.1.4
+cryptography==3.2
 cupshelpers==1.0
 decorator==4.3.2
 defer==1.0.6
